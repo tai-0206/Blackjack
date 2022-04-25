@@ -20,6 +20,8 @@ docker-compose down
 ## 遊び方
 
 ```bash
-# blackjackディレクトリ下でコマンドを実行
+# blackjackディレクトリ内でコマンドを実行
 docker-compose exec app php BJMain.php
+
+# プレイヤー人数は1人を選択してください。
 ```
