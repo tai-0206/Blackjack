@@ -98,7 +98,7 @@ class BJGame
             echo 'あなたの負けです！' . PHP_EOL;
         }
 
-        if ($dealerIsBurst) {
+        if (!($playerIsBurst) && $dealerIsBurst) {
             echo 'あなたの勝ちです！' . PHP_EOL;
         }
 

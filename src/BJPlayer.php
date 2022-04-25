@@ -45,12 +45,17 @@ class BJPlayer implements BJPerson
 
     public function askDraw(int $playerHand): bool
     {
-        echo 'あなたの現在の得点は' . $playerHand . 'です。カードを引きますか？(Y/N)' . PHP_EOL;
-        $stdin = trim(fgets(STDIN));
-        if ($stdin === 'Y') {
-            $askDraw = true;
-        } elseif ($stdin === 'N') {
-            $askDraw = false;
+        if ($playerHand < 21) {
+            echo 'あなたの現在の得点は' . $playerHand . 'です。カードを引きますか？(Y/N)' . PHP_EOL;
+            $stdin = trim(fgets(STDIN));
+            if ($stdin === 'Y') {
+                $askDraw = true;
+            } elseif ($stdin === 'N') {
+                $askDraw = false;
+            }
+        } elseif ($playerHand === 21) {
+            echo 'ブラックジャックです。' . PHP_EOL;
+            return false;
         }
         return $askDraw;
     }
